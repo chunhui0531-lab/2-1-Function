@@ -20,39 +20,38 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.8}
 
-/* ── Header ── */
+/* Header */
 header{background:var(--ink);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 10px,rgba(255,255,255,.025) 10px,rgba(255,255,255,.025) 11px)}
-.school-name{font-family:'Noto Serif TC',serif;font-size:13px;color:rgba(255,255,255,.5);letter-spacing:.2em;margin-bottom:.5rem;position:relative}
+.school-name{font-family:'Noto Serif TC',serif;font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:.2em;margin-bottom:.5rem;position:relative}
 .exam-title{font-family:'Noto Serif TC',serif;font-size:clamp(24px,6vw,36px);font-weight:700;color:#fff;line-height:1.3;position:relative}
-.exam-sub{font-size:14px;color:rgba(255,255,255,.45);margin-top:.6rem;position:relative}
+.exam-sub{font-size:14px;color:rgba(255,255,255,0.45);margin-top:.6rem;position:relative}
 .accent-bar{width:40px;height:3px;background:var(--accent);margin:1.2rem auto 0;border-radius:2px;position:relative}
 
-/* ── Stats ── */
+/* Stats */
 .stats-bar{background:var(--surface);border-bottom:1px solid var(--ruled);padding:.9rem 1.5rem;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06)}
 .stat-item{display:flex;flex-direction:column;align-items:center}
 .stat-val{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:var(--ink)}
 .stat-val.accent{color:var(--accent)}
 .stat-label{font-size:11px;color:var(--ink-3);letter-spacing:.05em}
 
-/* ── Progress ── */
+/* Progress */
 .progress-outer{height:4px;background:var(--ruled);overflow:hidden}
 .progress-fill{height:100%;background:var(--accent);transition:width .4s ease}
 
-/* ── Container ── */
+/* Main Layout */
 .main-container{max-width:800px;margin:0 auto;padding:2.5rem 1.25rem 6rem;display:flex;flex-direction:column;gap:1.5rem}
 .cat-divider{display:flex;align-items:center;gap:.75rem;margin-top:1rem}
 .cat-divider::after{content:'';flex:1;height:1px;background:var(--ruled)}
 .cat-tag{font-family:'Noto Serif TC',serif;font-size:12px;font-weight:600;letter-spacing:.15em;color:var(--ink-3)}
 
-/* ── Question Card ── */
+/* Question Card */
 .q-card{background:var(--surface);border:1px solid var(--ruled);border-radius:var(--radius);padding:1.75rem;box-shadow:var(--shadow)}
 .q-header{display:flex;gap:1rem;margin-bottom:1.2rem}
 .q-num-bubble{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
 .q-text{font-size:16px;color:var(--ink);flex:1}
 .q-ctx{background:var(--info-bg);border-left:4px solid var(--info);padding:1rem;margin-bottom:1.2rem;font-size:14px;border-radius:0 8px 8px 0}
 
-/* ── Options ── */
+/* Options */
 .opts{display:flex;flex-direction:column;gap:8px}
 .opt{display:flex;gap:12px;padding:12px 16px;border:1px solid var(--ruled);border-radius:8px;cursor:pointer;transition:all .15s}
 .opt:hover:not(.locked){background:#f9f9fb;border-color:#ccc}
@@ -61,7 +60,7 @@ header::before{content:'';position:absolute;inset:0;background:repeating-linear-
 .opt.err{background:var(--err-bg);border-color:var(--err-border);color:var(--err)}
 .opt-lbl{width:24px;height:24px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
 
-/* ── Feedback ── */
+/* Feedback & Teacher Button */
 .fb{margin-top:1rem;padding:12px;border-radius:8px;font-size:14px;border:1px solid;animation:fadeIn .3s}
 .fb.ok{background:var(--ok-bg);color:var(--ok);border-color:var(--ok-border)}
 .fb.err{background:var(--err-bg);color:var(--err);border-color:var(--err-border)}
@@ -69,7 +68,7 @@ header::before{content:'';position:absolute;inset:0;background:repeating-linear-
 .ask-teacher-btn:hover{background:var(--paper);border-color:var(--ink-3)}
 .ask-teacher-btn img{width:20px;height:20px;border-radius:50%;object-fit:cover}
 
-/* ── Chat Panel ── */
+/* AI Chat Panel */
 #chat-fab{position:fixed;bottom:30px;right:30px;width:65px;height:65px;border-radius:50%;background:#fff;border:2px solid var(--ink);cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:9000;padding:0;overflow:hidden;transition:transform .2s}
 #chat-fab:hover{transform:scale(1.1)}
 #chat-fab img{width:100%;height:100%;object-fit:cover}
@@ -79,7 +78,7 @@ header::before{content:'';position:absolute;inset:0;background:repeating-linear-
 .chat-head{background:var(--ink);color:#fff;padding:15px;display:flex;align-items:center;gap:12px}
 .chat-head img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,0.3)}
 .chat-msgs{flex:1;overflow-y:auto;padding:15px;display:flex;flex-direction:column;gap:12px;background:#fcfcfc}
-.msg-bubble{max-width:85%;padding:10px 14px;border-radius:15px;font-size:14px;line-height:1.6}
+.msg-bubble{max-width:85%;padding:10px 14px;border-radius:15px;font-size:14px;line-height:1.6;word-break:break-word}
 .msg.bot .msg-bubble{background:var(--paper);border:1px solid var(--ruled);border-bottom-left-radius:2px}
 .msg.user{align-self:flex-end}
 .msg.user .msg-bubble{background:var(--ink);color:#fff;border-bottom-right-radius:2px}
@@ -87,7 +86,6 @@ header::before{content:'';position:absolute;inset:0;background:repeating-linear-
 #chatInput{flex:1;border:1px solid var(--ruled);border-radius:20px;padding:8px 15px;outline:none;resize:none;font-family:inherit}
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-@media(max-width:500px){ #chat-panel{right:20px;bottom:100px;width:calc(100vw - 40px)} }
 </style>
 </head>
 <body>
@@ -131,7 +129,7 @@ header::before{content:'';position:absolute;inset:0;background:repeating-linear-
 </div>
 
 <script>
-// 技術常數
+// 設定常數
 const API_KEY = 'AIzaSyBDzrVGb4agubCflx_y65YVMRjqgVxXs_s';
 const TEACHER_AVATAR = '網頁首頁 .jpg';
 
@@ -153,12 +151,12 @@ const QS = [
   {cat:'二、填充題（分數係數）',q:'15.&nbsp;&nbsp;解聯立方程式「⅓x－½y＝1」及「3x－y＝16」，設解為 x＝a、y＝b，則 (a,b)＝？',opts:['(6, 2)','(4, 0)','(5, 1)','(7, 3)'],a:0,hint:'①×6化整再用加減消去法。'},
   {cat:'二、填充題（化簡求解）',q:'16.&nbsp;&nbsp;解聯立方程式「3x＋y＝8」及「x－5y＝－14－2y」（先化簡②式），設解為 x＝a、y＝b，則 a×b＝？',opts:['3','5','4','6'],a:1,hint:'②簡化為 x-3y=-14。'},
   {cat:'二、填充題（應用問題）',q:'17.&nbsp;&nbsp;七年甲班共有 33 人，校外教學時男生每 3 人一組、女生每 5 人一組，全班恰好分成 9 組，則男生有幾人？',opts:['12 人','15 人','21 人','18 人'],a:3,hint:'設男生x組、女生y組，x+y=9, 3x+5y=33。'},
-  {cat:'三、素養題組',ctx:'校慶義賣活動中，甲組賣出 2 個手工肥皂（每個 x 元）和 5 包果之乾（每包 y 元），共收入 170 元；乙組賣出 1 個手工肥皂和 3 包果之乾，共收入 100 元。',q:'18.&nbsp;&nbsp;依題意列出的聯立方程式應為？',opts:['x＋y＝170 且 x＋y＝100','2x＋5y＝170 且 x＋3y＝100','5x＋2y＝170 且 3x＋y＝100','2x＋3y＝170 且 x＋5y＝100'],a:1,hint:'甲：2x+5y=170；乙：x+3y=100。'},
-  {cat:'三、素養題組',ctx:'承上題，手工肥皂每個多少元？',q:'19.&nbsp;&nbsp;手工肥皂每個多少元？',opts:['5 元','10 元','15 元','20 元'],a:1,hint:'解得 x=10, y=30。'},
-  {cat:'三、素養題組',ctx:'承上題，手工肥皂每個 10 元、果之乾每包 30 元。',q:'20.&nbsp;&nbsp;若購買 4 個手工肥皂和 3 包果之乾，共花費多少元？',opts:['110 元','120 元','130 元','140 元'],a:2,hint:'4×10 + 3×30 = 130。'},
-  {cat:'四、計算題',q:'21.&nbsp;&nbsp;解聯立方程式「2x＋y＝7」及「3x－2y＝7」，設解為 x＝a、y＝b，則 a＋b＝？',opts:['4','2','3','5'],a:0,hint:'①×2加②得 7x=21, x=3, y=1。'},
-  {cat:'四、計算題',q:'22.&nbsp;&nbsp;解聯立方程式「x－3y＝1」及「2x＋y＝9」，設解為 x＝a、y＝b，則 a×b＝？',opts:['2','3','5','4'],a:3,hint:'代入消去法 x=1+3y 代入②。'},
-  {cat:'四、計算題',q:'23.&nbsp;&nbsp;羽球社和桌球社共有 55 人。若兩社同時各退出 5 人後，羽球社剩下的是桌球社剩下的 2 倍，則羽球社原有多少人？',opts:['25 人','30 人','35 人','40 人'],a:2,hint:'x+y=55, x-5=2(y-5)。'}
+  {cat:'三、素養題組',ctx:'校慶義賣活動中，甲組賣出 2 個手工肥皂和 5 包果乾共 170 元；乙組賣出 1 個手工肥皂和 3 包果乾共 100 元。',q:'18.&nbsp;&nbsp;依題意列出的聯立方程式應為？',opts:['2x＋5y＝170 且 x＋3y＝100','x＋y＝170 且 x＋y＝100','5x＋2y＝170 且 3x＋y＝100','2x＋3y＝170 且 x＋5y＝100'],a:0,hint:'設肥皂x元、果乾y元。'},
+  {cat:'三、素養題組',ctx:'承上題。',q:'19.&nbsp;&nbsp;手工肥皂每個多少元？',opts:['5 元','10 元','15 元','20 元'],a:1,hint:'解得 x=10, y=30。'},
+  {cat:'三、素養題組',ctx:'手工肥皂 10 元、果乾 30 元。',q:'20.&nbsp;&nbsp;購買 4 個肥皂和 3 包果乾共多少元？',opts:['110 元','120 元','130 元','140 元'],a:2,hint:'4×10 + 3×30 = 130。'},
+  {cat:'四、計算題',q:'21.&nbsp;&nbsp;解「2x＋y＝7」及「3x－2y＝7」，a＋b＝？',opts:['4','2','3','5'],a:0,hint:'①×2 + ② 得 7x=21。'},
+  {cat:'四、計算題',q:'22.&nbsp;&nbsp;解「x－3y＝1」及「2x＋y＝9」，a×b＝？',opts:['2','3','5','4'],a:3,hint:'x=1+3y 代入。'},
+  {cat:'四、計算題',q:'23.&nbsp;&nbsp;兩社共 55 人，退 5 人後羽球社是桌球社 2 倍，原羽球社幾人？',opts:['25 人','30 人','35 人','40 人'],a:2,hint:'x+y=55, x-5=2(y-5)。'}
 ];
 
 const LABELS = ['Ａ','Ｂ','Ｃ','Ｄ'];
@@ -167,7 +165,6 @@ let errorCounts = new Array(QS.length).fill(0);
 let chatHistory = [];
 let chatOpen = false;
 
-// 初始化
 function init(){
   const container = document.getElementById('mainContainer');
   let lastCat = '';
@@ -212,18 +209,17 @@ function renderOpts(qi){
 
 function pick(qi, oi){
   if(answers[qi] !== -1) return;
-  
   if(oi === QS[qi].a){
     answers[qi] = oi;
     showFb(qi, true);
   } else {
     errorCounts[qi]++;
     if(errorCounts[qi] >= 2){
-      answers[qi] = oi; // 錯兩次後顯示正確答案並提供老師按鈕
+      answers[qi] = oi;
       showFb(qi, false);
-      triggerTeacher(qi);
+      document.getElementById('chat-badge').style.display = 'block';
     } else {
-      alert("哎呀，再想一下喔！你可以觀察看看係數或者代入驗算看看。");
+      alert("哎呀，再想一下喔！");
     }
   }
   renderOpts(qi);
@@ -235,7 +231,7 @@ function showFb(qi, isOk){
   const q = QS[qi];
   fb.innerHTML = `
     <div class="fb ${isOk?'ok':'err'}">
-      ${isOk ? '✓ 太棒了！答對了。' : `✗ 差一點點，正確答案是 (${LABELS[q.a]})。`}
+      ${isOk ? '✓ 答對了！' : `✗ 答錯囉，正確答案是 (${LABELS[q.a]})。`}
       <br><small>${q.hint}</small>
     </div>
     ${!isOk ? `<button class="ask-teacher-btn" onclick="askTeacher(${qi})"><img src="${TEACHER_AVATAR}"> 🌸 椿椿老師，我這題卡住了...</button>` : ''}
@@ -251,24 +247,18 @@ function updateStats(){
   document.getElementById('progressFill').style.width = (done/QS.length*100)+'%';
 }
 
-// AI 聊天功能
 function toggleChat(){
   chatOpen = !chatOpen;
   document.getElementById('chat-panel').style.display = chatOpen ? 'flex' : 'none';
   document.getElementById('chat-badge').style.display = 'none';
   if(chatOpen && chatHistory.length === 0){
-    appendBotMsg("你好！我是椿椿老師 🌸 很高興見到你！這章在學二元一次聯立方程式，哪一題讓你覺得最有挑戰性呢？");
+    appendBotMsg("你好！我是椿椿老師 🌸 遇到哪一題卡住了嗎？別擔心，我們一起來思考看看！");
   }
-}
-
-function triggerTeacher(qi){
-  document.getElementById('chat-badge').style.display = 'block';
-  // 這裡可以做一點提示動畫
 }
 
 function askTeacher(qi){
   if(!chatOpen) toggleChat();
-  const msg = `老師，第 ${qi+1} 題「${QS[qi].q.substring(0,20)}...」我不太懂為什麼選 (${LABELS[QS[qi].a]})，可以引導我嗎？`;
+  const msg = `老師，第 ${qi+1} 題我不太懂，可以引導我嗎？`;
   appendUserMsg(msg);
   callAI(msg, qi);
 }
@@ -301,15 +291,8 @@ async function doSend(){
 }
 
 async function callAI(userTxt, qi = null){
-  const systemPrompt = `你是「椿椿老師」，一位親切有耐心的台灣國中數學老師。
-課程：七年級數學第一章「二元一次聯立方程式」。
-教學原則：
-1. 絕對不給直接答案或數值。
-2. 使用蘇格拉底引導法（提問引導）。
-3. 語氣溫柔多鼓勵，多用「加油」、「試試看」、「觀察看看」。
-4. 每次回話不超過 3 句話。
-${qi !== null ? `學生正在問第 ${qi+1} 題，正確答案是 ${LABELS[QS[qi].a]}，題目提示是：${QS[qi].hint}` : ''}`;
-
+  const systemPrompt = `你是「椿椿老師」，一位親切有耐心的台灣國中數學老師。絕對不給直接答案，用蘇格拉底提問法引導。回話不超過 3 句話。${qi !== null ? `學生卡在第 ${qi+1} 題，提示是：${QS[qi].hint}` : ''}`;
+  
   chatHistory.push({ role: 'user', parts: [{ text: userTxt }] });
 
   try {
@@ -322,11 +305,12 @@ ${qi !== null ? `學生正在問第 ${qi+1} 題，正確答案是 ${LABELS[QS[qi
       })
     });
     const data = await response.json();
+    if(data.error) throw new Error(data.error.message);
     const reply = data.candidates[0].content.parts[0].text;
     appendBotMsg(reply);
     chatHistory.push({ role: 'model', parts: [{ text: reply }] });
   } catch (e) {
-    appendBotMsg("哎呀，老師這裏連線有點問題，可以再問我一次嗎？");
+    appendBotMsg(`連線問題：${e.message}。請確認 API 金鑰有效且未被 GitHub 撤銷。`);
   }
 }
 
