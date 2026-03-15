@@ -20,38 +20,32 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.8}
 
-/* Header */
 header{background:var(--ink);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
 .school-name{font-family:'Noto Serif TC',serif;font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:.2em;margin-bottom:.5rem;position:relative}
 .exam-title{font-family:'Noto Serif TC',serif;font-size:clamp(24px,6vw,36px);font-weight:700;color:#fff;line-height:1.3;position:relative}
 .exam-sub{font-size:14px;color:rgba(255,255,255,0.45);margin-top:.6rem;position:relative}
 .accent-bar{width:40px;height:3px;background:var(--accent);margin:1.2rem auto 0;border-radius:2px;position:relative}
 
-/* Stats */
 .stats-bar{background:var(--surface);border-bottom:1px solid var(--ruled);padding:.9rem 1.5rem;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06)}
 .stat-item{display:flex;flex-direction:column;align-items:center}
 .stat-val{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:700;color:var(--ink)}
 .stat-val.accent{color:var(--accent)}
 .stat-label{font-size:11px;color:var(--ink-3);letter-spacing:.05em}
 
-/* Progress */
 .progress-outer{height:4px;background:var(--ruled);overflow:hidden}
 .progress-fill{height:100%;background:var(--accent);transition:width .4s ease}
 
-/* Main Layout */
 .main-container{max-width:800px;margin:0 auto;padding:2.5rem 1.25rem 6rem;display:flex;flex-direction:column;gap:1.5rem}
 .cat-divider{display:flex;align-items:center;gap:.75rem;margin-top:1rem}
 .cat-divider::after{content:'';flex:1;height:1px;background:var(--ruled)}
 .cat-tag{font-family:'Noto Serif TC',serif;font-size:12px;font-weight:600;letter-spacing:.15em;color:var(--ink-3)}
 
-/* Question Card */
 .q-card{background:var(--surface);border:1px solid var(--ruled);border-radius:var(--radius);padding:1.75rem;box-shadow:var(--shadow)}
 .q-header{display:flex;gap:1rem;margin-bottom:1.2rem}
 .q-num-bubble{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
 .q-text{font-size:16px;color:var(--ink);flex:1}
 .q-ctx{background:var(--info-bg);border-left:4px solid var(--info);padding:1rem;margin-bottom:1.2rem;font-size:14px;border-radius:0 8px 8px 0}
 
-/* Options */
 .opts{display:flex;flex-direction:column;gap:8px}
 .opt{display:flex;gap:12px;padding:12px 16px;border:1px solid var(--ruled);border-radius:8px;cursor:pointer;transition:all .15s}
 .opt:hover:not(.locked){background:#f9f9fb;border-color:#ccc}
@@ -60,7 +54,6 @@ header{background:var(--ink);padding:3rem 1.5rem 2.5rem;text-align:center;positi
 .opt.err{background:var(--err-bg);border-color:var(--err-border);color:var(--err)}
 .opt-lbl{width:24px;height:24px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
 
-/* Feedback & Teacher Button */
 .fb{margin-top:1rem;padding:12px;border-radius:8px;font-size:14px;border:1px solid;animation:fadeIn .3s}
 .fb.ok{background:var(--ok-bg);color:var(--ok);border-color:var(--ok-border)}
 .fb.err{background:var(--err-bg);color:var(--err);border-color:var(--err-border)}
@@ -68,7 +61,6 @@ header{background:var(--ink);padding:3rem 1.5rem 2.5rem;text-align:center;positi
 .ask-teacher-btn:hover{background:var(--paper);border-color:var(--ink-3)}
 .ask-teacher-btn img{width:20px;height:20px;border-radius:50%;object-fit:cover}
 
-/* AI Chat Panel */
 #chat-fab{position:fixed;bottom:30px;right:30px;width:65px;height:65px;border-radius:50%;background:#fff;border:2px solid var(--ink);cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:9000;padding:0;overflow:hidden;transition:transform .2s}
 #chat-fab:hover{transform:scale(1.1)}
 #chat-fab img{width:100%;height:100%;object-fit:cover}
@@ -129,8 +121,8 @@ header{background:var(--ink);padding:3rem 1.5rem 2.5rem;text-align:center;positi
 </div>
 
 <script>
-// 設定常數
-const API_KEY = 'AIzaSyBDzrVGb4agubCflx_y65YVMRjqgVxXs_s';
+// 更新後的 API 金鑰
+const API_KEY = 'AIzaSyAG6XPGvgdLihc8P5ZIQNvJgYdK7Mb7P5o';
 const TEACHER_AVATAR = '網頁首頁 .jpg';
 
 const QS = [
@@ -310,7 +302,7 @@ async function callAI(userTxt, qi = null){
     appendBotMsg(reply);
     chatHistory.push({ role: 'model', parts: [{ text: reply }] });
   } catch (e) {
-    appendBotMsg(`連線問題：${e.message}。請確認 API 金鑰有效且未被 GitHub 撤銷。`);
+    appendBotMsg(`連線問題：${e.message}。請確認您的 API 金鑰已在 Google AI Studio 啟用。`);
   }
 }
 
